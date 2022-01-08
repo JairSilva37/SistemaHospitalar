@@ -6,40 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Views\EstadoPaciente\Create.cshtml" />
-    <None Include="Views\EstadoPaciente\Details.cshtml" />
-    <None Include="Views\EstadoPaciente\Edit.cshtml" />
-    <None Include="Views\EstadoPaciente\Index.cshtml" />
-    <None Include="Views\Home\Index.cshtml" />
-    <None Include="Views\Home\Privacy.cshtml" />
-    <None Include="Views\Paciente\Create.cshtml" />
-    <None Include="Views\Paciente\Delete.cshtml" />
-    <None Include="Views\Paciente\Details.cshtml" />
-    <None Include="Views\Paciente\Edit.cshtml" />
-    <None Include="Views\Paciente\Index.cshtml" />
-    <None Include="Views\Paciente\_delete_details.cshtml" />
-    <None Include="Views\Paciente\_edit_create.cshtml" />
-    <None Include="Views\Shared\Components\Cabecalho\Default.cshtml" />
-    <None Include="Views\Shared\Components\EstadoCritico\Default.cshtml" />
-    <None Include="Views\Shared\Components\EstadoEstavel\Default.cshtml" />
-    <None Include="Views\Shared\Components\EstadoGrave\Default.cshtml" />
-    <None Include="Views\Shared\Components\EstadoObservacaoViewComponents\Default.cshtml" />
-    <None Include="Views\Shared\Error.cshtml" />
-    <None Include="Views\Shared\PartialViews\_estado_paciente.cshtml" />
-    <None Include="Views\Shared\PartialViews\_footer.cshtml" />
-    <None Include="Views\Shared\PartialViews\_head.cshtml" />
-    <None Include="Views\Shared\PartialViews\_layout_original.cshtml" />
-    <None Include="Views\Shared\PartialViews\_lis_do_menu_left.cshtml" />
-    <None Include="Views\Shared\PartialViews\_menu_inferior_left.cshtml" />
-    <None Include="Views\Shared\PartialViews\_navbar.cshtml" />
-    <None Include="Views\Shared\PartialViews\_profile_left_sidebar.cshtml" />
-    <None Include="Views\Shared\PartialViews\_rightsidebar.cshtml" />
-    <None Include="Views\Shared\PartialViews\_scripts.cshtml" />
-    <None Include="Views\Shared\PartialViews\_sub_navbar.cshtml" />
-    <None Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
-    <None Include="Views\_ViewImports.cshtml" />
-    <None Include="Views\_ViewStart.cshtml" />
     <None Include="wwwroot\bundle\core.dashboard.js" />
     <None Include="wwwroot\bundle\core.dashboard.min.js" />
     <None Include="wwwroot\bundle\core.js" />
@@ -823,6 +789,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="KissLog.AspNetCore" Version="5.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.22" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.22" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.22">
       <PrivateAssets>all</PrivateAssets>

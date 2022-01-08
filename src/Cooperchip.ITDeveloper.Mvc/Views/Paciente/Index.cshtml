@@ -1,4 +1,5 @@
 ﻿
+@using Cooperchip.ITDeveloper.Mvc.Extentions.ExtensionsMethods
 @model IEnumerable<Cooperchip.ITDeveloper.Domain.Models.Paciente>
 
 @{
@@ -36,18 +37,11 @@
                 <th>
                     @Html.DisplayNameFor(model => model.DataNascimento)
                 </th>
-                @*<th>
-                    @Html.DisplayNameFor(model => model.DataInternacao)
-                </th>*@
-                @*<th>
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>*@
+
                 <th>
                     @Html.DisplayNameFor(model => model.Ativo)
                 </th>
-                @*<th>
-                    @Html.DisplayNameFor(model => model.Cpf)
-                </th>*@
+
                 <th>
                     @Html.DisplayNameFor(model => model.TipoPaciente)
                 </th>
@@ -55,20 +49,10 @@
                     @Html.DisplayNameFor(model => model.Sexo)
                 </th>
 
-
                 <th>
                     @Html.DisplayNameFor(model => model.EstadoPaciente.Descricao)
                 </th>
 
-                @*<th>
-                    @Html.DisplayNameFor(model => model.Rg)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RgOrgao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.RgDataEmissao)
-                </th>*@
                 <th>Ação</th>
 
             </tr>
@@ -77,25 +61,20 @@
         <tbody>
             @foreach (var item in Model)
             {
+                //var dataNascPtBr = item.DataNascimento.ToBrazilianDate();
+                var dateTimeNascPtBr = item.DataNascimento.ToBrazianDateTime();
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Nome)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.DataNascimento)
+                        @dateTimeNascPtBr
                     </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.DataInternacao)
-                    </td>*@
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>*@
+
                     <td>
                         @Html.DisplayFor(modelItem => item.Ativo)
                     </td>
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.Cpf)
-                    </td>*@
+
                     <td>
                         @Html.DisplayFor(modelItem => item.TipoPaciente)
                     </td>
@@ -106,16 +85,6 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.EstadoPaciente.Descricao)
                     </td>
-
-                    @*<td>
-                        @Html.DisplayFor(modelItem => item.Rg)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RgOrgao)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.RgDataEmissao)
-                    </td>*@
 
                     <td class="text-right">
                         <a asp-controller="Paciente" asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-pencil-square fa-2x" title="Editar Paciente"></span> </a>
@@ -130,5 +99,3 @@
 
     </div>
 </div>
-
-
