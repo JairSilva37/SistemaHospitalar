@@ -20,9 +20,11 @@ namespace Cooperchip.ITDeveloper.Mvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ITDeveloperDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conexao")));
 
             services.AddControllersWithViews();
+
+            services.AddDbContext<ITDeveloperDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Conexao")));
+
 
 
         }

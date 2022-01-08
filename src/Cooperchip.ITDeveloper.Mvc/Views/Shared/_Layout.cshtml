@@ -1,17 +1,16 @@
 ﻿
 @await Html.PartialAsync("PartialViews/_layout_original")
 
+@* ACIMA O _LAYOUT.CSHTML ORIGINAL *@
+
 
 <!doctype html>
-<!--[if lt IE 8]><html class="no-js lt-ie8"> <![endif]-->
+
 <html class="no-js">
 
 @await Html.PartialAsync("PartialViews/_head")
 
 <body>
-    <!--[if lt IE 9]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     @await Html.PartialAsync("PartialViews/_navbar")
 
@@ -20,24 +19,23 @@
     <div id="wrapper">
         <!-- .page-sidebar -->
         <aside id="sidebar" class="page-sidebar hidden-md hidden-sm hidden-xs">
-            <!-- Start .sidebar-inner -->
             <div class="sidebar-inner">
-                <!-- Start .sidebar-scrollarea -->
                 <div class="sidebar-scrollarea">
 
 
                     @await Html.PartialAsync("PartialViews/_profile_left_sidebar")
 
-
                     <div class="sidebar-panel">
                         <h5 class="sidebar-panel-title">Navigation</h5>
                     </div>
-                    <!-- / .sidebar-panel -->
-                    <!-- .side-nav -->
+
                     <div class="side-nav">
                         <ul class="nav">
-                            @*LIs com left menus*@
+
+                            @* LIs com os lefts menus *@
+
                             @await Html.PartialAsync("PartialViews/_lis_do_menu_left")
+
                         </ul>
                     </div>
                     <!-- / side-nav -->
@@ -45,9 +43,9 @@
                     @await Html.PartialAsync("PartialViews/_menu_inferior_left")
 
                 </div>
-                <!-- End .sidebar-scrollarea -->
             </div>
-            <!-- End .sidebar-inner -->
+            <!-- End .sidebar-scrollarea -->
+
         </aside>
         <!-- / page-sidebar -->
 
@@ -55,35 +53,32 @@
 
         <!-- .page-content -->
         <div class="page-content sidebar-page right-sidebar-page clearfix">
-            <!-- .page-content-wrapper -->
             <div class="page-content-wrapper">
                 <div class="page-content-inner">
-                    <!-- .page-content-inner -->
 
-                    @await Html.PartialAsync("PartialViews/_sub_navbar")
+                    @RenderBody()
 
-
-                    @RenderBody();
                 </div>
-                <!-- / .page-content-inner -->
             </div>
-            <!-- / page-content-wrapper -->
         </div>
-        <!-- / page-content -->
+
+
 
     </div>
     <!-- / #wrapper -->
 
+
     @await Html.PartialAsync("PartialViews/_footer")
 
-    <!-- End #footer  -->
+
     <!-- Back to top -->
     <div id="back-to-top">
         <a href="#">Voltar para o Topo</a>
     </div>
 
     @await Html.PartialAsync("PartialViews/_scripts")
-    @RenderSection("scripts",required:false)
+
+    @RenderSection("scripts", required: false)
 
 </body>
 </html>
