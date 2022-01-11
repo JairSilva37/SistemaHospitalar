@@ -17,7 +17,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Configuration
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
 
             return services;
