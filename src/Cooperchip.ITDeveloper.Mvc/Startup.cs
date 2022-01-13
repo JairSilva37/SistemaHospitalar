@@ -1,8 +1,13 @@
 ﻿using Cooperchip.ITDeveloper.Mvc.Configuration;
+using Cooperchip.ITDeveloper.Mvc.Data;
+using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
+using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
+using Cooperchip.ITDeveloper.Mvc.Identity.Services;
 using KissLog.Apis.v1.Listeners;
 using KissLog.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +34,6 @@ namespace Cooperchip.ITDeveloper.Mvc
             Configuration = builer.Build();
         }
 
-
         public void ConfigureServices(IServiceCollection services)
         {
             //EXTENSÃO DA CLASSE DO BANCO
@@ -42,11 +46,12 @@ namespace Cooperchip.ITDeveloper.Mvc
             services.AddDbMvcAndRazorConfig();
 
             //EXTENSÃO DAS INEJÇÕES DE DEPENDECIAS
-            services.AddDependencyInjectConfig();
+            services.AddDependencyInjectConfig(Configuration);
 
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationDbContext context,
+            UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             if (env.IsDevelopment())
             {
@@ -78,11 +83,14 @@ namespace Cooperchip.ITDeveloper.Mvc
                 });
             }
 
+            var authMsgSenderOpt = new AuthMessageSenderOptions
+            {
+                SendGridUser=Configuration["SendGridUser"],
+                SendGridkey=Configuration["SendGridkey"]
+            };
 
             app.UseEndpoints(endpoints =>
             {
-
-
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
@@ -90,7 +98,8 @@ namespace Cooperchip.ITDeveloper.Mvc
                 endpoints.MapRazorPages();
 
             });
-
+            //CRIA O USUÁRIO ADMIN COMO ADMINISTRADOR DO SISTEMA
+            DefaultUsersAndRoles.Seed(context, userManager, roleManager).Wait();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Cooperchip.ITDeveloper.Mvc.Data;
+using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -21,7 +22,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Configuration
             services.AddDbContext<ApplicationDbContext>(options =>
                  options.UseSqlServer(configuration.GetConnectionString("DefaultITDeveloper")));
 
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<ApplicationUser>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             return services;

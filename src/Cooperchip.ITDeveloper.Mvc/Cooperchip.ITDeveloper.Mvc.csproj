@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Views\Carrinho\Checkout.cshtml" />
-    <None Include="Views\Carrinho\Index.cshtml" />
     <None Include="Views\EstadoPaciente\Create.cshtml" />
     <None Include="Views\EstadoPaciente\Delete.cshtml" />
     <None Include="Views\EstadoPaciente\Details.cshtml" />
@@ -16,7 +14,6 @@
     <None Include="Views\EstadoPaciente\Index.cshtml" />
     <None Include="Views\Home\BoxInit.cshtml" />
     <None Include="Views\Home\Dashboard.cshtml" />
-    <None Include="Views\Home\Icones.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
     <None Include="Views\Home\Sobre.cshtml" />
@@ -28,8 +25,6 @@
     <None Include="Views\Paciente\Index.cshtml" />
     <None Include="Views\Paciente\_delete_details.cshtml" />
     <None Include="Views\Paciente\_edit_create.cshtml" />
-    <None Include="Views\Produto\Index.cshtml" />
-    <None Include="Views\Produto\Lista.cshtml" />
     <None Include="Views\Shared\Components\Cabecalho\Default.cshtml" />
     <None Include="Views\Shared\Components\EstadoCritico\Default.cshtml" />
     <None Include="Views\Shared\Components\EstadoEstavel\Default.cshtml" />
@@ -196,11 +191,17 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.22" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.0.96" />
+    <PackageReference Include="SendGrid" Version="9.25.1" />
   </ItemGroup>
 
 
   <ItemGroup>
     <ProjectReference Include="..\Cooperchip.ITDeveloper.Data\Cooperchip.ITDeveloper.Data.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>
