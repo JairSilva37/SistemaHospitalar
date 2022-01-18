@@ -8,20 +8,26 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.AspNetCore.Identity;
 
 namespace Cooperchip.ITDeveloper.Data.ORM
 {
     public class ITDeveloperDbContext : DbContext
     {
+
+
         public ITDeveloperDbContext(DbContextOptions<ITDeveloperDbContext> options)
-            :base(options)
-        {}
+            : base(options)
+        { }
+
+
 
         public DbSet<Mural> Mural { get; set; }
 
         public DbSet<Paciente> Paciente { get; set; }
 
         public DbSet<EstadoPaciente> EstadoPaciente { get; set; }
+        public DbSet<Generico> Generico { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

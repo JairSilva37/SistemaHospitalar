@@ -2,6 +2,7 @@
 using Cooperchip.ITDeveloper.Mvc.Data;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
+using Cooperchip.ITDeveloper.Mvc.Extensions.Middlewares;
 using Cooperchip.ITDeveloper.Mvc.Identity.Services;
 using KissLog.Apis.v1.Listeners;
 using KissLog.AspNetCore;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace Cooperchip.ITDeveloper.Mvc
 {
@@ -38,15 +40,12 @@ namespace Cooperchip.ITDeveloper.Mvc
         {
             //EXTENSÃO DA CLASSE DO BANCO
             services.AddDbContextConfig(Configuration);
-
             //ESXTENSÃO DAS CLASSES IDENTITY
             services.AddIdentityConfig(Configuration);
-
             //ESXTENSÃO DAS CLASSES RAZOR Mvc
             services.AddDbMvcAndRazorConfig();
-
             //EXTENSÃO DAS INEJÇÕES DE DEPENDECIAS
-            services.AddDependencyInjectConfig(Configuration);
+            services.AddDependencyInjectConfig(Configuration);          
 
         }
 
@@ -88,6 +87,13 @@ namespace Cooperchip.ITDeveloper.Mvc
                 SendGridUser=Configuration["SendGridUser"],
                 SendGridkey=Configuration["SendGridkey"]
             };
+            //CRIA O USUÁRIO ADMIN COMO ADMINISTRADOR DO SISTEMA
+            //CriaUsersAndRoles.Seed(context, userManager, roleManager).Wait();
+
+            //CRIAÇÃO DO PRIMEIRO MIDEWHARE PARA CRIAR USUÁRIO SUPER          
+            //app.UseMiddleware<DefaultUsersAndRolesMiddeware>();
+            //app.UseAddUserAndRoles();
+
 
             app.UseEndpoints(endpoints =>
             {
@@ -98,8 +104,7 @@ namespace Cooperchip.ITDeveloper.Mvc
                 endpoints.MapRazorPages();
 
             });
-            //CRIA O USUÁRIO ADMIN COMO ADMINISTRADOR DO SISTEMA
-            DefaultUsersAndRoles.Seed(context, userManager, roleManager).Wait();
+
         }
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Cooperchip.ITDeveloper.Mvc.Migrations
 {
-    public partial class NovaestruturacaoIdentity : Migration
+    public partial class AddUserAndroleExtensionmethod : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -154,6 +154,21 @@ namespace Cooperchip.ITDeveloper.Mvc.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "4218D398-2590-43CE-A0CF-03742FA920C4", "a629ea3d-6948-4394-8c16-122974774c4e", "Admin", "ADMIN" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Apelido", "ConcurrencyStamp", "DataNascimento", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NomeCompleto", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "006180EB-7739-441C-A60E-68922AD34806", 0, "Jair Silva", "a85d0c31-8d33-4aa0-99d8-bcd111bf66ac", new DateTime(2022, 1, 17, 21, 1, 53, 422, DateTimeKind.Local).AddTicks(7263), "jairrss@hotmail.com", true, false, null, "Jair Silva Administrador", "JAIRRSS@HOTMAIL.COM", "JAIRRSS@HOTMAIL.COM", "AQAAAAEAACcQAAAAECoQyrzfHNpdtoHKsKKdUTTmdWt7SpaZkdct06SXAeoIf/fNQK6BGy97HXzxdG51WA==", null, false, "392fd35c-d618-44ba-8050-071e8630cf75", false, "jairrss@hotmail.com" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { "006180EB-7739-441C-A60E-68922AD34806", "4218D398-2590-43CE-A0CF-03742FA920C4" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

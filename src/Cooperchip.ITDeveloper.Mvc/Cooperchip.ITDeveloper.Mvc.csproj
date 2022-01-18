@@ -7,6 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="bin\Debug\netcoreapp3.1\Csv\Bairro.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\BairroUtf8.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\Cid.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\Cidade.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\CidadeUtf8.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\CidUtf8.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\Generico.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\GenericoUtf8.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\Medicamentos.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\MedicamentosUtf8.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\UF.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\UFUtf8.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\UnidadeGeografica.CSV" />
+    <None Include="bin\Debug\netcoreapp3.1\Csv\UnidadeGeograficaUtf8.CSV" />
     <None Include="Views\EstadoPaciente\Create.cshtml" />
     <None Include="Views\EstadoPaciente\Delete.cshtml" />
     <None Include="Views\EstadoPaciente\Details.cshtml" />
@@ -197,11 +211,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cooperchip.ITDeveloper.Data\Cooperchip.ITDeveloper.Data.csproj" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

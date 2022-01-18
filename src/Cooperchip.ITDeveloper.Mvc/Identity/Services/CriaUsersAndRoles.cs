@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Mvc.Identity.Services
 {
-    public static class DefaultUsersAndRoles
+    public static class CriaUsersAndRoles
     {
         public static async Task Seed(ApplicationDbContext context, UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager)

@@ -1,0 +1,51 @@
+﻿
+@model ContatoViewModel
+
+@{
+    ViewBag.Title = "Fale Conosco";
+}
+
+<vc:cabecalho titulo="Fale Concosco" subtitulo="Contate-nos com suas sugestões, críticas e solicitações"></vc:cabecalho>
+
+<div class="panel panel-default panel-controls">
+    <div class="panel panel-heading">
+        <h3>Fale Consoco</h3>
+    </div>
+    <div class="panel panel-body panel-info">
+        <div class="col-md-4">
+            <form asp-controller="Home" asp-action="Contato" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                @* TODO: a partial não está funcionando *@
+                @*<partial name="_contato" />*@
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Subject" control-label"></label>
+                    <input asp-for="Subject" class="form-control" />
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Message" class="control-label"></label>
+                    <textarea asp-for="Message" cols="30" rows="10" class="form-control" ></textarea>
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Enviar" class="btn btn-success" />
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-default">Voltar para a Index</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts{
+        <script src="~/bundle/dashboard.min.js"></script>
+    }*@
