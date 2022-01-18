@@ -16,8 +16,9 @@ namespace Cooperchip.ITDeveloper.Mvc.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
 
-            builder.AddUserAndRole();
-            builder.AddGenericos();
+            //builder.AddUserAndRole();
+            //builder.AddGenericos();
+            //builder.AddCid();
 
             base.OnModelCreating(builder);
         }
