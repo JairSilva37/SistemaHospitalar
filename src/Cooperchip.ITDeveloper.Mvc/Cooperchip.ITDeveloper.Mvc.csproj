@@ -26,6 +26,11 @@
     <None Include="Views\EstadoPaciente\Details.cshtml" />
     <None Include="Views\EstadoPaciente\Edit.cshtml" />
     <None Include="Views\EstadoPaciente\Index.cshtml" />
+    <None Include="Views\Generico\Create.cshtml" />
+    <None Include="Views\Generico\Delete.cshtml" />
+    <None Include="Views\Generico\Details.cshtml" />
+    <None Include="Views\Generico\Edit.cshtml" />
+    <None Include="Views\Generico\Index.cshtml" />
     <None Include="Views\Home\BoxInit.cshtml" />
     <None Include="Views\Home\Dashboard.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
