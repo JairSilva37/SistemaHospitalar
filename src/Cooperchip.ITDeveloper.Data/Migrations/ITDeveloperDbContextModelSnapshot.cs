@@ -107,6 +107,35 @@ namespace Cooperchip.ITDeveloper.Data.Migrations
                     b.ToTable("Generico");
                 });
 
+            modelBuilder.Entity("Cooperchip.ITDeveloper.Domain.Models.Medicamento", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Codigo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CodigoGenerico")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnName("Descricao")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasMaxLength(4000);
+
+                    b.Property<string>("Generico")
+                        .IsRequired()
+                        .HasColumnName("Generico")
+                        .HasColumnType("nvarchar(4000)")
+                        .HasMaxLength(4000);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Medicamento");
+                });
+
             modelBuilder.Entity("Cooperchip.ITDeveloper.Domain.Models.Paciente", b =>
                 {
                     b.Property<Guid>("Id")

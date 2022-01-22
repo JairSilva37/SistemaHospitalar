@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Cooperchip.ITDeveloper.Mvc.Extensions.Middlewares
+namespace Cooperchip.ITDeveloper.Mvc.Extensions.Middleware
 {
     public class DefaultUsersAndRolesMiddeware
     {

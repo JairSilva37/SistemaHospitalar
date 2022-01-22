@@ -1,1 +1,1 @@
-﻿///<binding AfterBuild='JavaScript, Stylesheets' />
+﻿///<binding AfterBuild='Update all files' />

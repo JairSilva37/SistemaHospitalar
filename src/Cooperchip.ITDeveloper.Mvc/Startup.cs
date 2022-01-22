@@ -1,9 +1,8 @@
 ﻿using Cooperchip.ITDeveloper.Mvc.Configuration;
+using Cooperchip.ITDeveloper.Mvc.Configurations;
 using Cooperchip.ITDeveloper.Mvc.Data;
-using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
-using Cooperchip.ITDeveloper.Mvc.Extensions.Middlewares;
-using Cooperchip.ITDeveloper.Mvc.Identity.Services;
+using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using KissLog.Apis.v1.Listeners;
 using KissLog.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -12,7 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
+using System.Text;
 
 namespace Cooperchip.ITDeveloper.Mvc
 {
@@ -22,35 +21,34 @@ namespace Cooperchip.ITDeveloper.Mvc
 
         public Startup(IWebHostEnvironment env)
         {
-            var builer = new ConfigurationBuilder()
+            var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", true, true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true)
                 .AddEnvironmentVariables();
-
             if (env.IsProduction())
             {
-                builer.AddUserSecrets<Startup>();
+                builder.AddUserSecrets<Startup>();
             }
 
-            Configuration = builer.Build();
+            Configuration = builder.Build();
         }
+
+
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //EXTENSÃO DA CLASSE DO BANCO
-            services.AddDbContextConfig(Configuration);
-            //ESXTENSÃO DAS CLASSES IDENTITY
-            services.AddIdentityConfig(Configuration);
-            //ESXTENSÃO DAS CLASSES RAZOR Mvc
-            services.AddDbMvcAndRazorConfig();
-            //EXTENSÃO DAS INEJÇÕES DE DEPENDECIAS
-            services.AddDependencyInjectConfig(Configuration);          
-
+            services.AddDbContextConfig(Configuration); // In DbContextConfig
+            services.AddIdentityConfig(Configuration); // In IdentityConfig
+            services.AddMvcAndRazor(); // In MvcAndRazorConfig
+            services.AddDependencyInjectConfig(Configuration); // In DependencyInjectConfig
+            services.AddCodePageProviderNotSupportedInDotNetCoreForAnsi();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationDbContext context,
-            UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+                              ApplicationDbContext context,
+                              RoleManager<IdentityRole> roleManager, 
+                              UserManager<ApplicationUser> userManager)
         {
             if (env.IsDevelopment())
             {
@@ -59,6 +57,7 @@ namespace Cooperchip.ITDeveloper.Mvc
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                //app.UseExceptionHandler("/LoggerSample/Index");
                 app.UseHsts();
             }
 
@@ -71,8 +70,10 @@ namespace Cooperchip.ITDeveloper.Mvc
             app.UseAuthentication();
             app.UseAuthorization();
 
+
             if (env.IsProduction())
             {
+                // make sure it is added after app.UseStaticFiles() and app.UseSession(), and before app.UseMvc()
                 app.UseKissLogMiddleware(options =>
                 {
                     options.Listeners.Add(new KissLogApiListener(new KissLog.Apis.v1.Auth.Application(
@@ -80,23 +81,24 @@ namespace Cooperchip.ITDeveloper.Mvc
                         Configuration["KissLog.ApplicationId"])
                     ));
                 });
+
             }
 
-            var authMsgSenderOpt = new AuthMessageSenderOptions
+            var authMsgMessageOpt = new AuthMessageSenderOptions
             {
-                SendGridUser=Configuration["SendGridUser"],
-                SendGridkey=Configuration["SendGridkey"]
+                SendGridUser = Configuration["SendGridUser"],
+                SendGridKey = Configuration["SendGridKey"]
             };
-            //CRIA O USUÁRIO ADMIN COMO ADMINISTRADOR DO SISTEMA
-            //CriaUsersAndRoles.Seed(context, userManager, roleManager).Wait();
 
-            //CRIAÇÃO DO PRIMEIRO MIDEWHARE PARA CRIAR USUÁRIO SUPER          
-            //app.UseMiddleware<DefaultUsersAndRolesMiddeware>();
-            //app.UseAddUserAndRoles();
-
+            //DefaultUsersAndRoles.Seed(context, userManager, roleManager).Wait();
+            //app.UseMiddleware<DefaultUsersAndRolesMiddeware>();  // Todo: Criar o ExtensionMethod
+            //app.UseAddUserAbdRoles();
 
             app.UseEndpoints(endpoints =>
             {
+                //routes.MapRoute("modulos","Prontuario/{controller=Home}/{action=Index}/{id?}");
+                //routes.MapRoute("pacientes","{controller=Home}/{action=Index}/{id}/{paciente}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-namespace Cooperchip.ITDeveloper.Mvc.Configuration
+namespace Cooperchip.ITDeveloper.Mvc.Configurations
 {
     public static class IdentityConfig
     {

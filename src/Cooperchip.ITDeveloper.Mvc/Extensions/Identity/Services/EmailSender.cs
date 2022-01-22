@@ -5,6 +5,7 @@ using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services
+
 {
     public class EmailSender : IEmailSender
     {
@@ -16,7 +17,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services
 
         public Task SendEmailAsync(string email, string subject, string message)
         {
-            return Execute(Options.SendGridkey, subject, message, email);
+            return Execute(Options.SendGridKey, subject, message, email);
         }
 
         private Task Execute(string apiKey, string subject, string message, string email)

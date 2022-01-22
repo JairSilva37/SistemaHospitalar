@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace Cooperchip.ITDeveloper.Mvc.Extensions.Middlewares
+namespace Cooperchip.ITDeveloper.Mvc.Extensions.Middleware
 {
     public static class UseAddUsersAndRolesExtension
     {

@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cooperchip.ITDeveloper.Mvc.Extensions.Identity
+
 {
     public class ApplicationUser : IdentityUser
     {

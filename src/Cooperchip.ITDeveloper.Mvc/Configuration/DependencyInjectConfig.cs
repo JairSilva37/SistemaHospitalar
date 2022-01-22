@@ -1,12 +1,13 @@
 ﻿using Cooperchip.ITDeveloper.Mvc.Extensions.Filters;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
+
 using KissLog;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Cooperchip.ITDeveloper.Mvc.Configuration
+namespace Cooperchip.ITDeveloper.Mvc.Configurations
 {
     public static class DependencyInjectConfig
     {
