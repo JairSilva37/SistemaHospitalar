@@ -1,4 +1,6 @@
-﻿<!--  .sidebar-panel -->
+﻿
+@inject Cooperchip.ITDeveloper.Domain.Interfaces.IUserInContext _userContext
+<!--  .sidebar-panel -->
 <div class="sidebar-panel">
     <h5 class="sidebar-panel-title">Profile</h5>
 </div>
@@ -6,8 +8,19 @@
 
 
 <div class="user-info clearfix">
-    <img src="/img/avatars/128.jpg" alt="avatar">
-    <span class="name">SuggeElson</span>
+    <div id="imgProfile">
+        @if (_userContext.IsAuthenticated() && !string.IsNullOrEmpty(_userContext.GetUserImgProfilePath()))
+        {
+            <img src="/uploads/@_userContext.GetUserImgProfilePath()" alt="Imagem de perfil" class="cooperchipCicleProfile">
+        }
+        else
+        {
+            <img src="/img/avatars/foto-padrao.jpg" alt="Imagem de perfil" class="cooperchipCicleProfile">
+        }
+    </div>
+
+
+    <span class="name">ITDEveloper</span>
     <div class="btn-group">
         <button type="button" class="btn btn-default btn-xs">
             <i class="l-basic-gear"></i>
@@ -16,14 +29,21 @@
             settings <span class="caret"></span>
         </button>
         <ul class="dropdown-menu right" role="menu">
+            @if (_userContext.IsAuthenticated())
+            {
+                <li><a asp-area="Identity" asp-page="/Account/Manage/Index" title="Perfil de Usuário"><i class="fa fa-edit"></i>Perfil</a></li>
+                <li><a asp-area="Identity" asp-page="/Account/Logout" title="Sair"><i class="fa fa-power-off"></i>Sair</a></li>                  
+            }
+
+
             <li>
-                <a href="#"><i class="fa fa-edit"></i>Edit profile</a>
+                <a href="#"><i class="fa fa-edit"></i>outra coisa</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-money"></i>Windraws</a>
+                <a href="#"><i class="fa fa-money"></i>mais algo</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-credit-card"></i>Deposits</a>
+                <a href="#"><i class="fa fa-credit-card"></i>mais uma</a>
             </li>
             <li class="divider"></li>
             <li>

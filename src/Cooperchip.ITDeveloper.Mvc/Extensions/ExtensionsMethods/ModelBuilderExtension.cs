@@ -1,4 +1,4 @@
-﻿using Cooperchip.ITDeveloper.Domain.Models;
+﻿using Cooperchip.ITDeveloper.Domain.Entities;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

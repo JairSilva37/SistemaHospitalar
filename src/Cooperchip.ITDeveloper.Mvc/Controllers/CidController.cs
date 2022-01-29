@@ -1,6 +1,6 @@
 ﻿using Cooperchip.ITDeveloper.Application.Extensions;
 using Cooperchip.ITDeveloper.Data.ORM;
-using Cooperchip.ITDeveloper.Domain.Models;
+using Cooperchip.ITDeveloper.Domain.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +27,9 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(int? pagina, string ordenacao, string stringBusca)
         {
+
+           // var usuario = HttpContext.User.Identity.Name;
+
             const int itensPorPagina = 8;
             int numeroPagina = (pagina ?? 1);
 
@@ -139,7 +142,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
                 {
                     throw new Exception(ex.Message);
                 }
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
             }
             return View(cid);
         }
@@ -177,7 +180,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
                         return BadRequest();
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                //return RedirectToAction(nameof(Index));
             }
             return View(cid);
         }

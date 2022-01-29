@@ -1,10 +1,11 @@
 ﻿
-using Cooperchip.ITDeveloper.Mvc.Models;
-using Cooperchip.ITDeveloper.Mvc.ViewModels;
+using Cooperchip.ITDeveloper.Application.ViewModels;
+using Cooperchip.ITDeveloper.Domain.Interfaces;
 using KissLog;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -17,10 +18,14 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
     {
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
-        public HomeController(IEmailSender emailSender, ILogger logger)
+        private readonly IUserInContext _user;
+        private readonly IUserInAllLayer _userInAllLayer;
+        public HomeController(IEmailSender emailSender, ILogger logger, IUserInContext user, IUserInAllLayer userInAllLayer)
         {
             _emailSender = emailSender;
             _logger = logger;
+            _user = user;
+            _userInAllLayer = userInAllLayer;
         }
 
         [Route("")]
@@ -33,9 +38,36 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
 
         [Route("dashboard")]
         [Route("pagina-de-estatistica")]
+        //[Authorize(Roles ="Admin")]
         public IActionResult Dashboard()
         {
-            return View();
+
+            var email = "";
+            IDictionary<string, string> minhasCaims = new Dictionary<string, string>();
+
+            if (_user.IsAuthenticated())
+            {
+                var apelido = User.FindFirst(x => x.Type == "Apelido")?.Value;
+                email = User.FindFirst(x => x.Type == "Email")?.Value;
+
+                minhasCaims.Add("Apelido", _user.GetUserApelido());
+                minhasCaims.Add("Nome Comleto", _user.GetUserNomeCompleto());
+                minhasCaims.Add("Imagem do Perfil", _user.GetUserImgProfilePath());
+                minhasCaims.Add("Id", _user.GetUserId().ToString());
+                minhasCaims.Add("Nome", _user.Name);
+                minhasCaims.Add("Email", _user.GetUserEmail());
+                minhasCaims.Add("E Administrador", _user.IsInRole("Admin") ? "SIM" : "NÃO");
+
+                var testeUserClaims = minhasCaims;
+                var testeDicionaryOfClaims = _userInAllLayer.DictonaryOfCaimss();
+                var testeUserListClaims = _userInAllLayer.LisOfClaims();
+
+                var nome = minhasCaims["Nome"];
+                email = minhasCaims["Email"];
+                var EhAdministrador = minhasCaims["E Administrador"];
+            }
+
+                return View();
         }
 
         [Route("box-init")]

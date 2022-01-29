@@ -46,6 +46,10 @@ namespace Cooperchip.ITDeveloper.Mvc.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("ImgProfilePath")
+                        .HasColumnType("nvarchar(255)")
+                        .HasMaxLength(255);
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 

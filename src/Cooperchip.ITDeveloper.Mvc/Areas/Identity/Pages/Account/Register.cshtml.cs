@@ -4,7 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
+using Cooperchip.ITDeveloper.Mvc.Infra;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +18,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
+        private readonly IUnitOfUpload _unitOfUpload;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
@@ -25,12 +28,13 @@ namespace Cooperchip.ITDeveloper.Mvc.Areas.Identity.Pages.Account
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender, IUnitOfUpload unitOfUpload)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _unitOfUpload = unitOfUpload;
         }
 
         [BindProperty]
@@ -57,6 +61,11 @@ namespace Cooperchip.ITDeveloper.Mvc.Areas.Identity.Pages.Account
             [Display(Name = "Data de nascimento")]
             public DateTime DataNascimento { get; set; }
 
+            [ProtectedPersonalData]
+            [StringLength(maximumLength: 255, ErrorMessage = "O campo {0} deve ter entre {2} e {1} caracteres.", MinimumLength = 21)]
+            [DataType(DataType.Text)]
+            public string ImgProfilePath { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -72,6 +81,8 @@ namespace Cooperchip.ITDeveloper.Mvc.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+
         }
 
         public void OnGet(string returnUrl = null)
@@ -79,17 +90,26 @@ namespace Cooperchip.ITDeveloper.Mvc.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        public async Task<IActionResult> OnPostAsync(IFormFile file, string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { 
-                    UserName = Input.Email, 
-                    Email = Input.Email ,
-                    Apelido=Input.Apelido,
-                    NomeCompleto=Input.NomeCompleto,
-                    DataNascimento=Input.DataNascimento
+
+                //TODO: implementar o upload da imagem de perfil posteriormente utilizar patters Iunitofforks;
+                if (!(file == null || string.IsNullOrEmpty(file.FileName)))
+                {
+                    _unitOfUpload.UploadImage(file);
+                }
+
+                var user = new ApplicationUser
+                {
+                    UserName = Input.Email,
+                    Email = Input.Email,
+                    Apelido = Input.Apelido,
+                    NomeCompleto = Input.NomeCompleto,
+                    DataNascimento = Input.DataNascimento,
+                    ImgProfilePath = file != null ? file.FileName : ""
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)

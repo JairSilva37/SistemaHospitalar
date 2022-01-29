@@ -1,13 +1,8 @@
 ﻿
-@using Microsoft.AspNetCore.Identity
-
-@inject SignInManager<ApplicationUser> SignInManager
-@inject UserManager<ApplicationUser> UserManager
 
 
-@{
-    Layout = null;
-    ViewBag.Title = "MedicalManagement-Sys - Home";
+@{ Layout = null;
+    ViewBag.Title = "MedicalManagement-Sys - Home"; 
 }
 
 
@@ -57,236 +52,23 @@
 
                                 <div id="page-header" class="clearfix">
                                     <div class="page-header">
-                                        @Html.Partial("_LoginPartial")
+
+                                        <partial name="_LoginPartial" />
+
                                         <div>
                                             <a href="#" title="MedicalManagement-Sys - Home"><img src="/images/logo-pages.png" /></a>
                                         </div>
                                     </div>
 
-
-                                    <div class="wrapper">
-                                        <br />
-                                        <div class="row text-md-center text-sm-center text-xs-center">
-
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/dashboard.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-
-
-                                                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-                                                        {
-                                                            <div style="text-align: center">
-                                                                <a asp-controller="Home" asp-action="Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                    <h4 class="card-title">.:: Entrar ::.</h4>
-                                                                </a>
-                                                            </div>
-                                                        }
-                                                        else
-                                                        {
-                                                            <div style="text-align: center">
-                                                                <a asp-controller="Home" asp-action="BoxInit" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                    <h4 class="card-title">.:: Entrar ::.</h4>
-                                                                </a>
-                                                            </div>
-                                                        }
-
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/atualizacao_cadastral.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Registro de Pacientes</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/calendar.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Agenda</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/examesdeimagens.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Chamada Médico</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-
-                                        <div class="row text-center">
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/evolucao.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard"
-                                                               style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Prontuários</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/prescricao.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Unidade Geográfica</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/sinais_vitais.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Base de Conhecimento</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/mural.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Mural de Avisos</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="row text-center">
-
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/interacao_medicamentosa.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard"
-                                                               style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Int. Medicamentosas</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/niveldeacesso.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Controle de Acesso</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/users.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Adm de Usuários</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-3 col-sm-3 col-sx-12" style="padding-bottom: 15px;">
-
-                                                <div class="card card-inverse text-md-center text-sm-center text-xs-center">
-                                                    <img src="/images/config.png" class="card-img-top" style="width: 100%; height: auto" />
-                                                    <div class="card-img-overlay">
-                                                        <div style="text-align: center">
-
-                                                            <a href="/Home/Dashboard" style="text-decoration: none; color: #ed5353; font-size: 16px;">
-                                                                <h4 class="card-title">Configurações</h4>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <partial name="_IndexHome" />
 
                                 </div>
+
                             </div>
                         </div>
-
                     </div>
-                </div>
 
+                </div>
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 ﻿
 @using Cooperchip.ITDeveloper.Mvc.Extensions.ExtensionsMethods
-@model IEnumerable<Cooperchip.ITDeveloper.Domain.Models.Paciente>
+@model IEnumerable<Cooperchip.ITDeveloper.Application.ViewModels.PacienteViewModel>
 
 @{ ViewData["Title"] = "Lista de Pacinte"; }
 
@@ -87,6 +87,8 @@
             <a asp-controller="Paciente" asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-pencil-square fa-2x" title="Editar Paciente"></span> </a>
             <a asp-controller="Paciente" asp-action="Details" asp-route-id="@item.Id"><span class="fa fa-search fa-2x" title="Detalhes Paciente"></span> </a>
             <a asp-controller="Paciente" asp-action="Delete" asp-route-id="@item.Id"><span class="fa fa-trash fa-2x" title="Excluir Paciente"></span> </a>
+            <a asp-action="ReportForEstadoPaciente" asp-route-id=@item.EstadoPacienteId><span class="fa fa-filter fa-2x" title="Paciente por Estado"></span> </a>
+
         </td>
 
     </tr>
@@ -100,7 +102,6 @@
 @section Scripts {
 
     <script src="~/bundle/dataTables.min.js"></script>
-
     <script>
         $(document).ready(function () {
             $('#myTable').DataTable({

@@ -25,7 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Console", "5.Console", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cooperchip.ITDeveloper.ConsoleApp", "src\Cooperchip.ITDeveloper.ConsoleApp\Cooperchip.ITDeveloper.ConsoleApp.csproj", "{24B488E7-C53A-4B6E-9AC7-84ACF0FEAD85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooperchip.ITDeveloper.Application", "src\Cooperchip.ITDeveloper.Application\Cooperchip.ITDeveloper.Application.csproj", "{800E90CF-64DA-43DB-A18D-5FBB21B0DA63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cooperchip.ITDeveloper.Application", "src\Cooperchip.ITDeveloper.Application\Cooperchip.ITDeveloper.Application.csproj", "{800E90CF-64DA-43DB-A18D-5FBB21B0DA63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2.CrossCutting", "4.2.CrossCutting", "{C880D01C-4594-4D0F-B7D0-36F07A41235B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cooperchip.ITDeveloper.CrossCutting", "src\Cooperchip.ITDeveloper.CrossCutting\Cooperchip.ITDeveloper.CrossCutting.csproj", "{1D6D4D65-D635-4B02-A6D9-D5F5CC1F0AB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,10 @@ Global
 		{800E90CF-64DA-43DB-A18D-5FBB21B0DA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{800E90CF-64DA-43DB-A18D-5FBB21B0DA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{800E90CF-64DA-43DB-A18D-5FBB21B0DA63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D6D4D65-D635-4B02-A6D9-D5F5CC1F0AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6D4D65-D635-4B02-A6D9-D5F5CC1F0AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6D4D65-D635-4B02-A6D9-D5F5CC1F0AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6D4D65-D635-4B02-A6D9-D5F5CC1F0AB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +77,8 @@ Global
 		{C01CF688-F5AF-413E-B910-36628063AF51} = {D576111D-8275-4EC7-B3AB-F32EDEA4955D}
 		{24B488E7-C53A-4B6E-9AC7-84ACF0FEAD85} = {C9C1F861-D38F-4C37-BAE7-9D0F98EFBEA4}
 		{800E90CF-64DA-43DB-A18D-5FBB21B0DA63} = {3271C4CC-88D8-4916-9100-C750EADDB3EE}
+		{C880D01C-4594-4D0F-B7D0-36F07A41235B} = {4EBE6FE3-C4EB-47A2-B9F0-0D09BCF508FE}
+		{1D6D4D65-D635-4B02-A6D9-D5F5CC1F0AB5} = {C880D01C-4594-4D0F-B7D0-36F07A41235B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FEF6244E-86A1-428F-B7CD-2504F8AB8574}

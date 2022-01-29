@@ -13,6 +13,8 @@ namespace Cooperchip.ITDeveloper.Mvc.Configuration
             services.AddDbContext<ITDeveloperDbContext>(options =>
                         options.UseSqlServer(configuration.GetConnectionString("DefaultITDeveloper")));
 
+            services.AddDatabaseDeveloperPageExceptionFilter();
+
             return services;
         }
     }

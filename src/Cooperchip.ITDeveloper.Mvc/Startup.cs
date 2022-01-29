@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text;
+using Cooperchip.ITDeveloper.Application.AutoMapper;
 
 namespace Cooperchip.ITDeveloper.Mvc
 {
@@ -38,6 +39,10 @@ namespace Cooperchip.ITDeveloper.Mvc
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddAutoMapper(typeof(AutoMapperConfig));
+
+
             services.AddDbContextConfig(Configuration); // In DbContextConfig
             services.AddIdentityConfig(Configuration); // In IdentityConfig
             services.AddMvcAndRazor(); // In MvcAndRazorConfig
@@ -53,6 +58,7 @@ namespace Cooperchip.ITDeveloper.Mvc
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseMigrationsEndPoint();
             }
             else
             {

@@ -1,13 +1,9 @@
 ﻿using Cooperchip.ITDeveloper.Application.Extensions;
 using Cooperchip.ITDeveloper.Data.ORM;
-using Cooperchip.ITDeveloper.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Mvc.Controllers

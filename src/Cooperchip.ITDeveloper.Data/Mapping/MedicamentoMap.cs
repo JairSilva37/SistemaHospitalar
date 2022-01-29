@@ -1,9 +1,6 @@
-﻿using Cooperchip.ITDeveloper.Domain.Models;
+﻿using Cooperchip.ITDeveloper.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Cooperchip.ITDeveloper.Data.Mapping
 {
