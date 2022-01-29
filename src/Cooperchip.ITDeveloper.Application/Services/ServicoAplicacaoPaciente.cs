@@ -2,11 +2,10 @@
 using Cooperchip.ITDeveloper.Application.Interfaces;
 using Cooperchip.ITDeveloper.Application.ViewModels;
 using Cooperchip.ITDeveloper.Domain.Entities;
+using Cooperchip.ITDeveloper.Domain.Interfaces;
 using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Application.Services
@@ -15,12 +14,14 @@ namespace Cooperchip.ITDeveloper.Application.Services
     {
 
         private readonly IRepositoryPaciente _repoPaciente;
+        private readonly IPacienteDomainService _serverDomain;
         private readonly IMapper _mapper;
 
-        public ServicoAplicacaoPaciente(IRepositoryPaciente repoPaciente, IMapper mapper)
+        public ServicoAplicacaoPaciente(IRepositoryPaciente repoPaciente, IMapper mapper, IPacienteDomainService serverDomain)
         {
             _repoPaciente = repoPaciente;
             _mapper = mapper;
+            _serverDomain = serverDomain;
         }
 
         public async Task<PacienteViewModel> ObterPacienteComEstadoPacienteApplication(Guid pacienteId)
@@ -85,6 +86,22 @@ namespace Cooperchip.ITDeveloper.Application.Services
         public bool TemPacienteApplication(Guid pacienteId)
         {
             return _repoPaciente.TemPaciente(pacienteId);
+        }
+
+        public async Task AdicionarPacienteApplication(PacienteViewModel pacienteViewModel)
+        {
+            await _serverDomain.AdicionarPaciente(_mapper.Map<Paciente>(pacienteViewModel));
+        }
+
+        public async Task AtualizarPacienteApplication(PacienteViewModel pacienteViewModel)
+        {
+            await _serverDomain.AtualizarPaciente(_mapper.Map<Paciente>(pacienteViewModel));
+        }
+
+        public async Task RemoverPacienteApplication(Guid id)
+        {
+            var paciente = await _repoPaciente.SelecionarPorId(id);
+            await _serverDomain.ExcluirPaciente(paciente);
         }
 
         #endregion

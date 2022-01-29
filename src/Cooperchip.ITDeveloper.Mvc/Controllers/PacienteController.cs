@@ -1,6 +1,5 @@
 ﻿using Cooperchip.ITDeveloper.Application.Interfaces;
-using Cooperchip.ITDeveloper.Domain.Entities;
-using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
+using Cooperchip.ITDeveloper.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,13 +12,11 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
     [Authorize(Roles = "Admin")]
     public class PacienteController : Controller
     {
-        private readonly IServicoAplicacaoPaciente _serviceApp;
-        private readonly IRepositoryPaciente _repoPaciente;
+        private readonly IServicoAplicacaoPaciente _serviceApp;    
 
-        public PacienteController(IServicoAplicacaoPaciente serviceApp, IRepositoryPaciente repoPaciente)
+        public PacienteController(IServicoAplicacaoPaciente serviceApp)
         {
-            _serviceApp = serviceApp;
-            _repoPaciente = repoPaciente;
+            _serviceApp = serviceApp;        
         }
 
         // GET: Paciente
@@ -29,8 +26,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
             return View(await _serviceApp.ObterPacientesComEstadoPacienteApplication());
 
             //AQUI ESCREVENDO NA MÃO
-            //return View(await _serviceApp.ObterPacientesDePacienteViewModelApplication());
-            
+            //return View(await _serviceApp.ObterPacientesDePacienteViewModelApplication());       
         }
 
         public async Task<IActionResult> Details(Guid id)
@@ -60,12 +56,12 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Paciente paciente)
+        public async Task<IActionResult> Create(PacienteViewModel paciente)
         {
             if (ModelState.IsValid)
             {
                 //paciente.Id = Guid.NewGuid(); // Não Usar
-                await _repoPaciente.Inserir(paciente);
+                await _serviceApp.AdicionarPacienteApplication(paciente);
                 //return RedirectToAction(nameof(Index));
                 return RedirectToAction("Index");
             }
@@ -75,7 +71,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
 
         public async Task<IActionResult> Edit(Guid id)
         {
-            var paciente = await _repoPaciente.SelecionarPorId(id);
+            var paciente = await _serviceApp.ObterPacienteComEstadoPacienteApplication(id);
             if (paciente == null)
             {
                 return NotFound();
@@ -86,7 +82,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, Paciente paciente)
+        public async Task<IActionResult> Edit(Guid id, PacienteViewModel paciente)
         {
             if (id != paciente.Id)
             {
@@ -97,7 +93,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
             {
                 try
                 {
-                    await _repoPaciente.Atualizar(paciente);
+                    await _serviceApp.AtualizarPacienteApplication(paciente);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -116,10 +112,10 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
             return View(paciente);
         }
 
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task< IActionResult >Delete(Guid id)
         {
 
-            var paciente = await _repoPaciente.ObterPacienteComEstadoPaciente(id);
+            var paciente =await  _serviceApp.ObterPacienteComEstadoPacienteApplication(id);
             if (paciente == null)
             {
                 return NotFound();
@@ -132,7 +128,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            await _repoPaciente.ExcluirPorId(id);
+            await _serviceApp.RemoverPacienteApplication(id);
             return RedirectToAction(nameof(Index));
         }
 
