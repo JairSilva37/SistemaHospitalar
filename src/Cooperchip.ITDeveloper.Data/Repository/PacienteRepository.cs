@@ -7,10 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cooperchip.ITDeveloper.Data.Repository.Abstractions;
 
 namespace Cooperchip.ITDeveloper.Data.Repository
 {
-    public class PacienteRepository : RepositoryGeneric<Paciente, Guid>, IRepositoryPaciente
+    public class PacienteRepository : GenericRepository<Paciente, Guid>, IRepositoryPaciente, IQueryPaciente
     {
 
         public PacienteRepository(ITDeveloperDbContext ctx) : base(ctx)

@@ -1,4 +1,4 @@
-﻿using Cooperchip.ITDeveloper.Domain.Interfaces;
+﻿using Cooperchip.ITDeveloper.Domain.Interfaces.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;

@@ -1,5 +1,6 @@
 ﻿using Cooperchip.ITDeveloper.Domain.Entities;
 using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
+using Cooperchip.ITDeveloper.Domain.Interfaces.ServiceContracts;
 using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Domain.Interfaces.Services

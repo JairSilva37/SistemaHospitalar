@@ -1,16 +1,22 @@
 ﻿using Cooperchip.ITDeveloper.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Data.ORM
 {
     public class ITDeveloperDbContext : DbContext
     {
+        private readonly IHttpContextAccessor _accessor;
 
-
-        public ITDeveloperDbContext(DbContextOptions<ITDeveloperDbContext> options)
+        public ITDeveloperDbContext(DbContextOptions<ITDeveloperDbContext> options, IHttpContextAccessor accessor)
             : base(options)
-        { }
+        {
+            _accessor = accessor;
+        }
 
 
 
@@ -51,24 +57,44 @@ namespace Cooperchip.ITDeveloper.Data.ORM
 
         }
 
-        //public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
-        //{
-        //    foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
-        //    {
-        //        if (entry.State == EntityState.Added)
-        //        {
-        //            entry.Property("DataCadastro").CurrentValue = DateTime.Now;
-        //        }
 
-        //        if (entry.State == EntityState.Modified)
-        //        {
-        //            entry.Property("DataCadastro").IsModified = false;
-        //        }
-        //    }
+        #region: SaveChangesAsync
+        public override int SaveChanges()
+        {
+            try
+            {
+                EditableCall();
+                return base.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Erro ao tentar ChangeTracker com saveChangesAsync");
+            }
+        }
+        #endregion
 
-        //    return base.SaveChangesAsync(cancellationToken);
-        //}
+        #region: SaveChangesAsync
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            try
+            {
+                EditableCall();
+                return await base.SaveChangesAsync(cancellationToken);
 
+            }
+            catch (Exception)
+            {
 
+                throw new Exception("Erro ao tentar ChangeTracker com saveChangesAsync");
+            }
+
+        }
+        #endregion
+
+        private void EditableCall()
+        {
+            var currentTime = DateTime.Now;
+            var usuario = _accessor.HttpContext.User.Identity.IsAuthenticated ? _accessor.HttpContext.User.Identity.Name : "Anônimo";
+        }
     }
 }
