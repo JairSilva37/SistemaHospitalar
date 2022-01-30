@@ -1,6 +1,4 @@
-﻿using Cooperchip.ITDeveloper.Application.Interfaces;
-using Cooperchip.ITDeveloper.Application.Services;
-using Cooperchip.ITDeveloper.CrossCutting.Auxiliar;
+﻿using Cooperchip.ITDeveloper.CrossCutting.Auxiliar;
 using Cooperchip.ITDeveloper.CrossCutting.Helpers;
 using Cooperchip.ITDeveloper.Data.Repository;
 using Cooperchip.ITDeveloper.Domain.Interfaces;
@@ -24,8 +22,6 @@ namespace Cooperchip.ITDeveloper.Mvc.Configurations
         public static IServiceCollection AddDependencyInjectConfig(this IServiceCollection services, IConfiguration configuration)
         {
             ///============INJEÇÃO DE PENENDECIAS====================//
-
-            services.AddScoped<IServicoAplicacaoPaciente, ServicoAplicacaoPaciente>();
             services.AddScoped<IPacienteDomainService, PacienteDomainServic>();
             services.AddScoped<IRepositoryPaciente, PacienteRepository>();
             ///=============================================================================//

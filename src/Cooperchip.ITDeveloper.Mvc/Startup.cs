@@ -40,14 +40,14 @@ namespace Cooperchip.ITDeveloper.Mvc
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddAutoMapper(typeof(AutoMapperConfig));
+            services.AddAutoMapper(typeof(Startup));
 
 
             services.AddDbContextConfig(Configuration); // In DbContextConfig
             services.AddIdentityConfig(Configuration); // In IdentityConfig
             services.AddMvcAndRazor(); // In MvcAndRazorConfig
             services.AddDependencyInjectConfig(Configuration); // In DependencyInjectConfig
-            services.AddCodePageProviderNotSupportedInDotNetCoreForAnsi();
+            services.AddCodePageProviderNotSupportedInDotNetCoreForAnsi();// Suporte para code page (1252 )
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,

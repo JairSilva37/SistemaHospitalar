@@ -1,10 +1,14 @@
-﻿using Cooperchip.ITDeveloper.Application.Interfaces;
+﻿using AutoMapper;
 using Cooperchip.ITDeveloper.Application.ViewModels;
+using Cooperchip.ITDeveloper.Domain.Entities;
+using Cooperchip.ITDeveloper.Domain.Interfaces;
+using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Mvc.Controllers
@@ -12,26 +16,62 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
     [Authorize(Roles = "Admin")]
     public class PacienteController : Controller
     {
-        private readonly IServicoAplicacaoPaciente _serviceApp;    
+        private readonly IRepositoryPaciente _repoPaciente;
+        private readonly IPacienteDomainService _serverDomain;
+        private readonly IMapper _mapper;
 
-        public PacienteController(IServicoAplicacaoPaciente serviceApp)
+        public PacienteController(IRepositoryPaciente repoPaciente, IPacienteDomainService serverDomain, IMapper mapper)
         {
-            _serviceApp = serviceApp;        
+            _repoPaciente = repoPaciente;
+            _serverDomain = serverDomain;
+            _mapper = mapper;
         }
+
 
         // GET: Paciente
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(_mapper.Map<IEnumerable<PacienteViewModel>>(await _repoPaciente.ListaPacientesComEstado()));
+        //}
+
+        //INDEX COM AUTOMAPER NA MÃO
+        #region INDEX COM MAPPER NA MÃO 
         public async Task<IActionResult> Index()
         {
-            //AQUI USANDO O AUTOMAPPER 
-            return View(await _serviceApp.ObterPacientesComEstadoPacienteApplication());
 
-            //AQUI ESCREVENDO NA MÃO
-            //return View(await _serviceApp.ObterPacientesDePacienteViewModelApplication());       
+            var pacientes = await _repoPaciente.ListaPacientesComEstado();
+            List<PacienteViewModel> listaView = new List<PacienteViewModel>();
+
+            foreach (var item in pacientes)
+            {
+                listaView.Add(new PacienteViewModel
+                {
+                    Ativo = item.Ativo,
+                    Cpf = item.Cpf,
+                    DataInternacao = item.DataInternacao,
+                    DataNascimento = item.DataNascimento,
+                    Email = item.Email,
+                    EstadoPaciente = item.EstadoPaciente,
+                    EstadoPacienteId = item.EstadoPacienteId,
+                    Id = item.Id,
+                    Nome = item.Nome,
+                    Rg = item.Rg,
+                    RgDataEmissao = item.RgDataEmissao,
+                    RgOrgao = item.RgOrgao,
+                    Sexo = item.Sexo,
+                    TipoPaciente = item.TipoPaciente,
+                    Motivo = item.Motivo
+                });
+
+            }
+
+            return View(listaView);
         }
+        #endregion
 
         public async Task<IActionResult> Details(Guid id)
         {
-            var paciente = await _serviceApp.ObterPacienteComEstadoPacienteApplication(id);
+            var paciente = _mapper.Map<PacienteViewModel>(await _repoPaciente.ObterPacienteComEstadoPaciente(id));
             if (paciente == null)
             {
                 return NotFound();
@@ -42,14 +82,14 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
 
         public async Task<IActionResult> ReportForEstadoPaciente(Guid id)
         {
-            var pacientePorEstado = await _serviceApp.ObterPacientesPorEstadoPacienteApplication(id);
+            var pacientePorEstado = _mapper.Map<IEnumerable<PacienteViewModel>>(await _repoPaciente.ObterPacientesPorEstadoPaciente(id));
             if (pacientePorEstado == null) NotFound();
             return View(pacientePorEstado);
         }
 
-        public async Task< IActionResult >Create()
+        public async Task<IActionResult> Create()
         {
-            ViewBag.EstadoPaciente = new SelectList(await _serviceApp.ListaEstadoPacienteApplication(), "Id", "Descricao");
+            ViewBag.EstadoPaciente = new SelectList(await _repoPaciente.ListaEstadoPaciente(), "Id", "Descricao");
             return View();
         }
 
@@ -61,22 +101,23 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
             if (ModelState.IsValid)
             {
                 //paciente.Id = Guid.NewGuid(); // Não Usar
-                await _serviceApp.AdicionarPacienteApplication(paciente);
+                await _serverDomain.AdicionarPaciente(_mapper.Map<Paciente>(paciente));
                 //return RedirectToAction(nameof(Index));
                 return RedirectToAction("Index");
             }
-            ViewBag.EstadoPaciente = new SelectList(await _serviceApp.ListaEstadoPacienteApplication(), "Id", "Descricao", paciente.EstadoPacienteId);
+            ViewBag.EstadoPaciente = new SelectList(await _repoPaciente.ListaEstadoPaciente(), "Id", "Descricao", paciente.EstadoPacienteId);
             return View(paciente);
         }
 
         public async Task<IActionResult> Edit(Guid id)
         {
-            var paciente = await _serviceApp.ObterPacienteComEstadoPacienteApplication(id);
+            var paciente = _mapper.Map<PacienteViewModel>(await _repoPaciente.ObterPacienteComEstadoPaciente(id));
+
             if (paciente == null)
             {
                 return NotFound();
             }
-            ViewBag.EstadoPaciente = new SelectList(await _serviceApp.ListaEstadoPacienteApplication(), "Id", "Descricao", paciente.EstadoPacienteId);
+            ViewBag.EstadoPaciente = new SelectList(await _repoPaciente.ListaEstadoPaciente(), "Id", "Descricao", paciente.EstadoPacienteId);
             return View(paciente);
         }
 
@@ -93,7 +134,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
             {
                 try
                 {
-                    await _serviceApp.AtualizarPacienteApplication(paciente);
+                    await _serverDomain.AtualizarPaciente(_mapper.Map<Paciente>(paciente));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -108,14 +149,15 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewBag.EstadoPaciente = new SelectList(await _serviceApp.ListaEstadoPacienteApplication(), "Id", "Descricao", paciente.EstadoPacienteId);
+            ViewBag.EstadoPaciente = new SelectList(await _repoPaciente.ListaEstadoPaciente(), "Id", "Descricao", paciente.EstadoPacienteId);
             return View(paciente);
         }
 
-        public async Task< IActionResult >Delete(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
 
-            var paciente =await  _serviceApp.ObterPacienteComEstadoPacienteApplication(id);
+            var paciente = _mapper.Map<PacienteViewModel>(await _repoPaciente.ObterPacienteComEstadoPaciente(id));
+
             if (paciente == null)
             {
                 return NotFound();
@@ -128,13 +170,15 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
-            await _serviceApp.RemoverPacienteApplication(id);
+            var paciente = await _repoPaciente.SelecionarPorId(id);
+            await _serverDomain.ExcluirPaciente(paciente);
             return RedirectToAction(nameof(Index));
         }
 
         private bool PacienteExists(Guid id)
         {
-            return _serviceApp.TemPacienteApplication(id);
+            return _repoPaciente.TemPaciente(id);
         }
     }
 }
+
