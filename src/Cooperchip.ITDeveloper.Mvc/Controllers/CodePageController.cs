@@ -12,9 +12,9 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
         {
             List<CodigoPagina> listaCodPage = new List<CodigoPagina>();
             foreach (EncodingInfo encInfo in Encoding.GetEncodings())
-            {   
-                listaCodPage.Add(new CodigoPagina 
-                { 
+            {
+                listaCodPage.Add(new CodigoPagina
+                {
                     Code = encInfo.CodePage,
                     Name = encInfo.Name,
                     DisplayName = encInfo.DisplayName,

@@ -1,5 +1,3 @@
-using System;
-
 namespace Cooperchip.ITDeveloper.Application.ViewModels
 {
     public class ErrorViewModel

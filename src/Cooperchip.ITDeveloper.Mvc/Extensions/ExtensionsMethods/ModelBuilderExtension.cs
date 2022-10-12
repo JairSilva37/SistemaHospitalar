@@ -115,7 +115,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.ExtensionsMethods
                             {
                                 CidInternalId = Convert.ToInt32(cidinternalid),
                                 Codigo = codigo,
-                                Diagnostico=diagnostico
+                                Diagnostico = diagnostico
                             });
                     }
                     k++;

@@ -35,7 +35,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
         {
             return View();
         }
- 
+
 
         [HttpGet]
         public async Task<IActionResult> ImportMedicamentos([FromServices] ITDeveloperDbContext context)

@@ -15,7 +15,7 @@ namespace Cooperchip.ITDeveloper.Mvc
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>(); 
+                    webBuilder.UseStartup<Startup>();
 
                 });
     }

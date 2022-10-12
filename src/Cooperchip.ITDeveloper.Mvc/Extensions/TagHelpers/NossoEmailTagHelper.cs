@@ -1,6 +1,6 @@
 ﻿
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Mvc.Extensions.TagHelpers
 {
@@ -12,7 +12,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.TagHelpers
             output.TagName = "a";
             var prefixo = await output.GetChildContentAsync();
             var meuemail = prefixo.GetContent() + "@" + Dominio;
-            output.Attributes.SetAttribute("href","mailto:" + meuemail);
+            output.Attributes.SetAttribute("href", "mailto:" + meuemail);
             output.Content.SetContent(meuemail);
         }
     }

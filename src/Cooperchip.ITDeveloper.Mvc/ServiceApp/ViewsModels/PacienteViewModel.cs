@@ -1,5 +1,5 @@
-﻿using Cooperchip.ITDeveloper.Domain.Enums;
-using Cooperchip.ITDeveloper.Domain.Entities;
+﻿using Cooperchip.ITDeveloper.Domain.Entities;
+using Cooperchip.ITDeveloper.Domain.Enums;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -34,6 +34,23 @@ namespace Cooperchip.ITDeveloper.Application.ViewModels
         [Required(ErrorMessage = "Campo {0} é requerido.")]
         [DataType(DataType.DateTime, ErrorMessage = "Data Inválida.")]
         public DateTime DataInternacao { get; set; }
+
+
+        //=========LOGA DE AUDITORIOA ==========================
+        [DisplayName(displayName: "Data Inclusão")]
+        public DateTime DataInclusao { get; set; }
+
+        [DisplayName(displayName: "Data Ultima Modificação")]
+        public DateTime DataUltimaModificacao { get; set; }
+
+        [DisplayName(displayName: "Usuário Inclusão")]
+        public string UsuarioInclusao { get; set; }
+
+        [DisplayName(displayName: "Usuário Ultima Modificação")]
+        public string UsuarioUltimaModificacao { get; set; }
+
+        //========================================================
+
 
 
         [DisplayName(displayName: "Email")]

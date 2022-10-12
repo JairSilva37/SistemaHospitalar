@@ -1,13 +1,13 @@
 ﻿using Cooperchip.ITDeveloper.Data.ORM;
+using Cooperchip.ITDeveloper.Data.Repository.Abstractions;
 using Cooperchip.ITDeveloper.Data.Repository.Base;
-using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
 using Cooperchip.ITDeveloper.Domain.Entities;
+using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Cooperchip.ITDeveloper.Data.Repository.Abstractions;
 
 namespace Cooperchip.ITDeveloper.Data.Repository
 {

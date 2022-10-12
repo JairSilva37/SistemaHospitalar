@@ -1,6 +1,6 @@
-﻿using System.Threading.Tasks;
-using Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.Helpers;
+﻿using Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.Cabecalho
 {

@@ -17,7 +17,7 @@ namespace Cooperchip.ITDeveloper.Domain.Entities
 
         [Display(Name = "Nome do Produto")]
         [Required(ErrorMessage = "O campo {0} é obrigatório!")]
-        [StringLength(80,ErrorMessage = "O campo {0} deve ter entre {2} e {1} caracteres", MinimumLength = 2)]
+        [StringLength(80, ErrorMessage = "O campo {0} deve ter entre {2} e {1} caracteres", MinimumLength = 2)]
         public string Nome { get; set; }
 
 

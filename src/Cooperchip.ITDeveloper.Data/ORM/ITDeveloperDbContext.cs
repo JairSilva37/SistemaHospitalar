@@ -1,4 +1,5 @@
 ﻿using Cooperchip.ITDeveloper.Domain.Entities;
+using Cooperchip.ITDeveloper.Domain.Entities.Audit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -95,6 +96,35 @@ namespace Cooperchip.ITDeveloper.Data.ORM
         {
             var currentTime = DateTime.Now;
             var usuario = _accessor.HttpContext.User.Identity.IsAuthenticated ? _accessor.HttpContext.User.Identity.Name : "Anônimo";
+
+            foreach (var entry in ChangeTracker.Entries().Where(x => x.Entity != null && typeof(IAuditable).IsAssignableFrom(x.Entity.GetType())))
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    if (entry.Property(nameof(IAuditableAdd.DataInclusao)) != null)
+                    {
+                        entry.Property(nameof(IAuditableAdd.DataInclusao)).CurrentValue = currentTime;
+                    }
+                    if (entry.Property(nameof(IAuditableAdd.UsuarioInclusao)) != null)
+                    {
+                        entry.Property(nameof(IAuditableAdd.UsuarioInclusao)).CurrentValue = usuario;
+                    }
+                }
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Property(nameof(IAuditableAdd.DataInclusao)).IsModified = false;
+                    entry.Property(nameof(IAuditableAdd.UsuarioInclusao)).IsModified = false;
+
+                    if (entry.Property(nameof(IAuditableUpd.DataUltimaModificacao)) != null)
+                    {
+                        entry.Property(nameof(IAuditableUpd.DataUltimaModificacao)).CurrentValue = currentTime;
+                    }
+                    if (entry.Property(nameof(IAuditableUpd.UsuarioUltimaModificacao)) != null)
+                    {
+                        entry.Property(nameof(IAuditableUpd.UsuarioUltimaModificacao)).CurrentValue = usuario;
+                    }
+                }
+            }
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using Cooperchip.ITDeveloper.Mvc.Configuration;
 using Cooperchip.ITDeveloper.Mvc.Configurations;
 using Cooperchip.ITDeveloper.Mvc.Data;
-using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
+using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
 using KissLog.Apis.v1.Listeners;
 using KissLog.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -11,8 +11,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Text;
-using Cooperchip.ITDeveloper.Application.AutoMapper;
 
 namespace Cooperchip.ITDeveloper.Mvc
 {
@@ -27,7 +25,8 @@ namespace Cooperchip.ITDeveloper.Mvc
                 .AddJsonFile("appsettings.json", true, true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true)
                 .AddEnvironmentVariables();
-            if (env.IsProduction())
+
+            if (env.IsProduction() || env.IsStaging() || env.IsDevelopment())
             {
                 builder.AddUserSecrets<Startup>();
             }
@@ -52,7 +51,7 @@ namespace Cooperchip.ITDeveloper.Mvc
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
                               ApplicationDbContext context,
-                              RoleManager<IdentityRole> roleManager, 
+                              RoleManager<IdentityRole> roleManager,
                               UserManager<ApplicationUser> userManager)
         {
             if (env.IsDevelopment())

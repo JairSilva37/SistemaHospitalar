@@ -2,7 +2,7 @@
 
 namespace Cooperchip.ITDeveloper.Mvc.Infra
 {
-    public  interface IUnitOfUpload
+    public interface IUnitOfUpload
     {
         void UploadImage(IFormFile file);
     }

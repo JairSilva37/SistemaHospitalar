@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-
-namespace Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services
+﻿namespace Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services
 {
     public class AuthMessageSenderOptions
     {

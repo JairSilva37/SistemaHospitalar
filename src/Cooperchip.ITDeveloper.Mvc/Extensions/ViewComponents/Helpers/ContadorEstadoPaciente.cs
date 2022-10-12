@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
-
-namespace Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.Helpers
+﻿namespace Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.Helpers
 {
     public class ContadorEstadoPaciente
     {

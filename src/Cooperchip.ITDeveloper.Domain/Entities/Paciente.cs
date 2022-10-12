@@ -6,7 +6,7 @@ namespace Cooperchip.ITDeveloper.Domain.Entities
 {
     public class Paciente : EntityAudit
     {
-        public Paciente(){ Ativo = true; }
+        public Paciente() { Ativo = true; }
         public Guid EstadoPacienteId { get; set; }
         public virtual EstadoPaciente EstadoPaciente { get; set; }
         public string Nome { get; set; }

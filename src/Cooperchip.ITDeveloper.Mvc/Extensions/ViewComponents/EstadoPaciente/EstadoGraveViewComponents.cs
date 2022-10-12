@@ -14,7 +14,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.EstadoPaciente
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public IViewComponentResult Invoke()
         {
             var totalGeral = Util.TotReg(_context);
             decimal totalEstado = Util.GetNumRegEstado(_context, "Grave");

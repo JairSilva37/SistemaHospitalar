@@ -52,7 +52,9 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.TagHelpers
                         output.Content.AppendHtml($"<td><a href='/{model}/Details/{value}' ><span class='fa fa-search fa-2x' title='Detalhes'></a>");
                         output.Content.AppendHtml($"<a href='/{model}/Edit/{value}' ><span class='fa fa-pencil-square fa-2x'  title='Editar'></a>");
                         output.Content.AppendHtml($"<a href='/{model}/Delete/{value}' ><span class='fa fa-trash fa-2x'  title='Excluir'></a></td>");
-                    } else {
+                    }
+                    else
+                    {
                         if (!prop.PropertyType.ToString().Contains("Collection"))
                             output.Content.AppendHtml($"<td>{value}</td>");
                     }

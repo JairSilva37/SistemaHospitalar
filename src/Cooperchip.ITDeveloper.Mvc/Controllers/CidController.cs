@@ -28,7 +28,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
         public async Task<IActionResult> Index(int? pagina, string ordenacao, string stringBusca)
         {
 
-           // var usuario = HttpContext.User.Identity.Name;
+            // var usuario = HttpContext.User.Identity.Name;
 
             const int itensPorPagina = 8;
             int numeroPagina = (pagina ?? 1);

@@ -67,7 +67,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
                 var EhAdministrador = minhasCaims["E Administrador"];
             }
 
-                return View();
+            return View();
         }
 
         [Route("box-init")]

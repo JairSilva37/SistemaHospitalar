@@ -17,9 +17,10 @@
     <div class="panel panel-body">
 
         <p>
-            <a class="btn btn-info"  asp-controller="EstadoPaciente" asp-action="Create"><i class="fa fa-plus-circle"></i>&nbsp;&nbsp; Adicionar</a>
+            <a class="btn btn-info" asp-controller="EstadoPaciente" asp-action="Create"><i class="fa fa-plus-circle"></i>&nbsp;&nbsp; Adicionar</a>
         </p>
-        
+
+        @*Tbela crida via reflexon em Cooperchip.ITDeveloper.Mvc.Extensions.TagHelpers *@
         <table-grid Items="@Model"></table-grid>
 
     </div>

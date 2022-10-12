@@ -11,7 +11,8 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public UserClaimsService(ApplicationDbContext dbContext, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IOptions<IdentityOptions> aoptionsAccessor) : base(userManager, roleManager, aoptionsAccessor)
+        public UserClaimsService(ApplicationDbContext dbContext, UserManager<ApplicationUser> userManager, 
+            RoleManager<IdentityRole> roleManager, IOptions<IdentityOptions> aoptionsAccessor) : base(userManager, roleManager, aoptionsAccessor)
         {
             _dbContext = dbContext;
         }
@@ -20,7 +21,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services
         {
             var principal = await base.CreateAsync(user);
 
-            ((ClaimsIdentity)principal.Identity).AddClaims(new []
+            ((ClaimsIdentity)principal.Identity).AddClaims(new[]
             {
                 new Claim("Apelido",user.Apelido),
                 new Claim("NomeCompleto",user.NomeCompleto),

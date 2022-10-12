@@ -26,7 +26,7 @@ namespace Cooperchip.ITDeveloper.Domain.Interfaces.Services
         public async Task ExcluirPaciente(Paciente paciente)
         {
             await _repo.Excluir(paciente);
-        }     
+        }
 
         public void Dispose()
         {

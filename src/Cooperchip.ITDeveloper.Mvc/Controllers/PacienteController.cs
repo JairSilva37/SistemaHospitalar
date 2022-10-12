@@ -108,11 +108,9 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
             {
                 //paciente.Id = Guid.NewGuid(); // Não Usar
                 await _serverDomain.AdicionarPaciente(_mapper.Map<Paciente>(paciente));
-                //Outros processos dentro de meso repositorio
+                //Outros processos dentro de mesmo repositorio
                 //..
                 //..
-
-
                 await _uow.Commit();
                 //return RedirectToAction(nameof(Index));
                 return RedirectToAction("Index");

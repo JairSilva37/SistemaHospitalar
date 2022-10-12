@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
-using Cooperchip.ITDeveloper.Data.ORM;
+﻿using Cooperchip.ITDeveloper.Data.ORM;
 using Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.EstadoPaciente
 {
@@ -14,7 +14,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.EstadoPaciente
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public IViewComponentResult Invoke()
         {
             var totalGeral = Util.TotReg(_context);
             decimal totalEstado = Util.GetNumRegEstado(_context, "Crítico");
@@ -25,7 +25,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.ViewComponents.EstadoPaciente
             var model = new ContadorEstadoPaciente()
             {
                 Titulo = "Pacientes Críticos",
-                Parcial = (int) totalEstado,
+                Parcial = (int)totalEstado,
                 Percentual = prct,
                 ClassContainer = "panel panel-info tile panelClose panelRefresh",
                 IconeLg = "l-basic-geolocalize-05",

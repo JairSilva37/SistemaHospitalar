@@ -9,11 +9,11 @@ namespace Cooperchip.ITDeveloper.Application.Extensions
         {
             //if (!File.Exists(filePath))
             //{
-                using (FileStream fileStream = File.Create(filePath))
-                {
-                    file.CopyTo(fileStream);
-                    fileStream.Flush();
-                }
+            using (FileStream fileStream = File.Create(filePath))
+            {
+                file.CopyTo(fileStream);
+                fileStream.Flush();
+            }
             //}
         }
     }

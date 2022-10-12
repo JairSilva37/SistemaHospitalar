@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Cooperchip.ITDeveloper.Mvc.Migrations
 {
@@ -11,7 +10,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Migrations
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
-        { 
+        {
 
         }
 

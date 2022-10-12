@@ -1,7 +1,7 @@
-﻿using System;
-using KissLog;
+﻿using KissLog;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System;
 
 namespace Cooperchip.ITDeveloper.Mvc.Extensions.Filters
 {
