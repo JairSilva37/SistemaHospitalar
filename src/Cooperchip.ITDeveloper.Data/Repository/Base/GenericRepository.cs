@@ -53,13 +53,18 @@ namespace Cooperchip.ITDeveloper.Data.Repository.Base
         {
             _context?.DisposeAsync();
         }
-        public virtual async Task<IEnumerable<T>> SelecionarTodos(Expression<Func<T, bool>> quando = null)
+        public virtual async Task<IEnumerable<T>> SelecionarTodos(Expression<Func<T, bool>> predicate = null)
         {
-            if (quando == null)
+            if (predicate == null)
             {
                 return await _context.Set<T>().AsNoTracking().ToListAsync();
             }
-            return await _context.Set<T>().AsNoTracking().Where(quando).ToListAsync();
+            return await _context.Set<T>().AsNoTracking().Where(predicate).ToListAsync();
+        }
+
+        public virtual async Task<IEnumerable<T>> Buscar(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().AsNoTracking().Where(predicate).ToListAsync();
         }
 
         //public virtual async Task<int> SaveAsync()

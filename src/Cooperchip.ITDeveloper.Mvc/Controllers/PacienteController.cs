@@ -4,6 +4,7 @@ using Cooperchip.ITDeveloper.Data.Repository.Abstractions;
 using Cooperchip.ITDeveloper.Domain.Entities;
 using Cooperchip.ITDeveloper.Domain.Interfaces;
 using Cooperchip.ITDeveloper.Domain.Interfaces.ServiceContracts;
+using Cooperchip.ITDeveloper.Domain.Mensageria.Notifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -15,14 +16,15 @@ using System.Threading.Tasks;
 namespace Cooperchip.ITDeveloper.Mvc.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class PacienteController : Controller
+    public class PacienteController : BaseController
     {
         private readonly IUnitOfWork _uow; // metodo para salvar tudo ou salva nada 
         private readonly IQueryPaciente _queryRepo;//responsável somente por metodos de consultas
         private readonly IPacienteDomainService _serverDomain; //responsável por metodos de Edição e gravação
         private readonly IMapper _mapper;
 
-        public PacienteController(IQueryPaciente queryRepo, IPacienteDomainService serverDomain, IMapper mapper, IUnitOfWork uow)
+        public PacienteController(IQueryPaciente queryRepo, IPacienteDomainService serverDomain, IMapper mapper,
+            IUnitOfWork uow, INotificador notificador):base(notificador)
         {
             _queryRepo = queryRepo;
             _serverDomain = serverDomain;
@@ -108,10 +110,12 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
             {
                 //paciente.Id = Guid.NewGuid(); // Não Usar
                 await _serverDomain.AdicionarPaciente(_mapper.Map<Paciente>(paciente));
+                if (!OperacaoValida()) return View(paciente);
                 //Outros processos dentro de mesmo repositorio
                 //..
                 //..
                 await _uow.Commit();
+                //ViewBag.Sucesso="Registro Cadastrado com sucesso!";
                 //return RedirectToAction(nameof(Index));
                 return RedirectToAction("Index");
             }

@@ -1,9 +1,9 @@
 ﻿using Cooperchip.ITDeveloper.Domain.Entities;
-using Cooperchip.ITDeveloper.Domain.Validations.Helpers;
+using Cooperchip.ITDeveloper.Domain.Mensageria.Validations.Helpers;
 using FluentValidation;
 using System;
 
-namespace Cooperchip.ITDeveloper.Domain.Validations
+namespace Cooperchip.ITDeveloper.Domain.Mensageria.Validations
 {
     public class PacienteValidation : AbstractValidator<Paciente>
     {
@@ -69,11 +69,11 @@ namespace Cooperchip.ITDeveloper.Domain.Validations
             #endregion
 
             #region: Estado do Paciente
-            RuleFor(n => n.EstadoPaciente.Descricao)
+            RuleFor(n => n.EstadoPacienteId)
                 .NotNull().WithMessage("O campo {PropertyName} não pode ser nulo.");
 
-            RuleFor(n => n.EstadoPaciente.Descricao)
-                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser informado.");
+            //RuleFor(n => n.EstadoPaciente.Descricao)
+            //    .NotEmpty().WithMessage("O campo {PropertyName} precisa ser informado.");
             #endregion
 
         }

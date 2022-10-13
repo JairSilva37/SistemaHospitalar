@@ -7,6 +7,7 @@ using Cooperchip.ITDeveloper.Domain.Interfaces.Helpers;
 using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
 using Cooperchip.ITDeveloper.Domain.Interfaces.ServiceContracts;
 using Cooperchip.ITDeveloper.Domain.Interfaces.Services;
+using Cooperchip.ITDeveloper.Domain.Mensageria.Notifications;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Filters;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
@@ -26,7 +27,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Configurations
         {
             ///============INJEÇÃO DE PENENDECIAS====================//
             ///Domain=>Service
-            services.AddScoped<IPacienteDomainService, PacienteDomainServic>();
+            services.AddScoped<IPacienteDomainService, PacienteDomainService>();
             ///Domain=>Repository
             services.AddScoped<IRepositoryPaciente, PacienteRepository>();
 
@@ -36,7 +37,13 @@ namespace Cooperchip.ITDeveloper.Mvc.Configurations
             ///Data=>Domain
             services.AddScoped<IQueryPaciente, PacienteRepository>();
 
-            ///=============================================================================//
+            #region:Mensageria
+            services.AddScoped<INotificador, Notificador>();
+            #endregion
+
+            ///=============================================================================///
+
+
 
 
             services.AddTransient<IUnitOfUpload, UnitOfUpload>();
