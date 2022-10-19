@@ -1,16 +1,21 @@
-﻿using Cooperchip.ITDeveloper.Mvc.Configuration;
+﻿using Cooperchip.ITDeveloper.Domain.Mensageria.EventHandles;
+using Cooperchip.ITDeveloper.Domain.Mensageria.EventPublish;
+using Cooperchip.ITDeveloper.Domain.Mensageria.Mediators;
+using Cooperchip.ITDeveloper.Mvc.Configuration;
 using Cooperchip.ITDeveloper.Mvc.Configurations;
 using Cooperchip.ITDeveloper.Mvc.Data;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
 using KissLog.Apis.v1.Listeners;
 using KissLog.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Reflection;
 
 namespace Cooperchip.ITDeveloper.Mvc
 {
@@ -38,8 +43,16 @@ namespace Cooperchip.ITDeveloper.Mvc
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            #region: Mediator
             services.AddAutoMapper(typeof(Startup));
+
+            //mediator
+            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddScoped<IMediatorHandler, MediatorHandler>();
+
+            //controle de notificação
+            services.AddScoped<INotificationHandler<PacienteCadastradoEvent>, PacienteCadastradoEventHandler>();
+            #endregion
 
 
             services.AddDbContextConfig(Configuration); // In DbContextConfig

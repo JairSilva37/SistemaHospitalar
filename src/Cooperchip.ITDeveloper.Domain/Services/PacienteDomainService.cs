@@ -1,6 +1,8 @@
 ﻿using Cooperchip.ITDeveloper.Domain.Entities;
 using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
 using Cooperchip.ITDeveloper.Domain.Interfaces.ServiceContracts;
+using Cooperchip.ITDeveloper.Domain.Mensageria.EventPublish;
+using Cooperchip.ITDeveloper.Domain.Mensageria.Mediators;
 using Cooperchip.ITDeveloper.Domain.Mensageria.Notifications;
 using Cooperchip.ITDeveloper.Domain.Mensageria.Validations;
 using System.Linq;
@@ -11,9 +13,11 @@ namespace Cooperchip.ITDeveloper.Domain.Interfaces.Services
     public class PacienteDomainService : BaseService, IPacienteDomainService
     {
         private readonly IRepositoryPaciente _repo;
-        public PacienteDomainService(IRepositoryPaciente repo, INotificador notificador) : base(notificador)
+        private readonly IMediatorHandler _mediatorHandler;
+        public PacienteDomainService(IRepositoryPaciente repo, INotificador notificador, IMediatorHandler mediatorHandler) : base(notificador)
         {
             _repo = repo;
+            _mediatorHandler=mediatorHandler;
         }
 
         public async Task AdicionarPaciente(Paciente paciente)
@@ -28,7 +32,9 @@ namespace Cooperchip.ITDeveloper.Domain.Interfaces.Services
                 Notificar("Já existe um  paciente com o CPF informado.");
                 return;
             }
-            await _repo.Inserir(paciente);
+            await _repo.InserirPacienteComEstadoPaciente(paciente);
+            await _mediatorHandler.PulicarEvento(new PacienteCadastradoEvent(paciente.Id, paciente,paciente.Motivo));
+
         }
 
         public async Task AtualizarPaciente(Paciente paciente)

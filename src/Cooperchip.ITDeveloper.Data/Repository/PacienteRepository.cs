@@ -49,6 +49,11 @@ namespace Cooperchip.ITDeveloper.Data.Repository
             return lista;
         }
 
+        public async Task InserirPacienteComEstadoPaciente(Paciente paciente)
+        {
+            paciente.EstadoPaciente=await _context.EstadoPaciente.FindAsync(paciente.EstadoPacienteId);
+            _context.Set<Paciente>().Add(paciente);
+        }
     }
 
 
