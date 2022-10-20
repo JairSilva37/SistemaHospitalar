@@ -1,5 +1,4 @@
 ﻿using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
-//using Microsoft.Extensions.Logging;
 using KissLog;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -10,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using LogLevel = KissLog.LogLevel;
 
 namespace Cooperchip.ITDeveloper.Mvc.Areas.Identity.Pages.Account
 {
@@ -17,12 +17,12 @@ namespace Cooperchip.ITDeveloper.Mvc.Areas.Identity.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly ILogger _logger;
+        private readonly IKLogger _logger;
 
-        public LoginModel(SignInManager<ApplicationUser> signInManager, ILogger logger)
+        public LoginModel(SignInManager<ApplicationUser> signInManager, IKLogger logger)
         {
             _signInManager = signInManager;
-            _logger = logger;
+            _logger=logger;
         }
 
         [BindProperty]

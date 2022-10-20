@@ -4,10 +4,12 @@ using Cooperchip.ITDeveloper.Domain.Mensageria.Mediators;
 using Cooperchip.ITDeveloper.Mvc.Configuration;
 using Cooperchip.ITDeveloper.Mvc.Configurations;
 using Cooperchip.ITDeveloper.Mvc.Data;
+using Cooperchip.ITDeveloper.Mvc.Extensions.Filters;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
-using KissLog.Apis.v1.Listeners;
+using KissLog;
 using KissLog.AspNetCore;
+using KissLog.CloudListeners.RequestLogsListener;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -55,6 +57,10 @@ namespace Cooperchip.ITDeveloper.Mvc
             #endregion
 
 
+            #region KisLLoger
+            services.AddLoggerConfig();
+            #endregion
+
             services.AddDbContextConfig(Configuration); // In DbContextConfig
             services.AddIdentityConfig(Configuration); // In IdentityConfig
             services.AddMvcAndRazor(); // In MvcAndRazorConfig
@@ -94,10 +100,10 @@ namespace Cooperchip.ITDeveloper.Mvc
                 // make sure it is added after app.UseStaticFiles() and app.UseSession(), and before app.UseMvc()
                 app.UseKissLogMiddleware(options =>
                 {
-                    options.Listeners.Add(new KissLogApiListener(new KissLog.Apis.v1.Auth.Application(
-                        Configuration["KissLog.OrganizationId"],
-                        Configuration["KissLog.ApplicationId"])
-                    ));
+                    options.Listeners.Add(new RequestLogsApiListener(new KissLog.CloudListeners.Auth.Application(
+                                                                    Configuration["KissLog.OrganizationId"],
+                                                                    Configuration["KissLog.ApplicationId"])
+                   ));
                 });
 
             }

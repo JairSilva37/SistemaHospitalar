@@ -2,6 +2,7 @@
 using Cooperchip.ITDeveloper.Domain.Entities;
 using Cooperchip.ITDeveloper.Domain.Interfaces;
 using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
+using Cooperchip.ITDeveloper.Domain.Mensageria.Notifications;
 using Cooperchip.ITDeveloper.Mvc.ServiceApp.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Mvc.Controllers
 {
-    public class TriagemController : Controller
+    public class TriagemController : BaseController
     {
         private readonly IRepositoryTriagem _repositoryTriagem;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public TriagemController(IRepositoryTriagem repositoryTriagem, IUnitOfWork unitOfWork, IMapper mapper)
+        public TriagemController(IRepositoryTriagem repositoryTriagem, IUnitOfWork unitOfWork, IMapper mapper, INotificador notificador) : base(notificador)
         {
             _repositoryTriagem=repositoryTriagem;
             _unitOfWork=unitOfWork;
@@ -52,6 +53,7 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
             if (ModelState.IsValid)
             {
                 await _repositoryTriagem.Inserir(_mapper.Map<Triagem>(model));
+                if (!OperacaoValida()) return View(model);
                 await _unitOfWork.Commit();
                 return RedirectToAction(nameof(Index));
             }

@@ -17,15 +17,16 @@ namespace Cooperchip.ITDeveloper.Mvc.Controllers
     public class HomeController : Controller
     {
         private readonly IEmailSender _emailSender;
-        private readonly ILogger _logger;
+        private readonly IKLogger _logger;
         private readonly IUserInContext _user;
         private readonly IUserInAllLayer _userInAllLayer;
-        public HomeController(IEmailSender emailSender, ILogger logger, IUserInContext user, IUserInAllLayer userInAllLayer)
+        public HomeController(IEmailSender emailSender, IUserInContext user, IUserInAllLayer userInAllLayer, IKLogger logger)
         {
             _emailSender = emailSender;
-            _logger = logger;
+
             _user = user;
             _userInAllLayer = userInAllLayer;
+            _logger=logger;
         }
 
         [Route("")]

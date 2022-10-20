@@ -7,10 +7,10 @@ namespace Cooperchip.ITDeveloper.Mvc.Extensions.Filters
 {
     public class AuditoriaIloggerFilter : IActionFilter
     {
-        private readonly ILogger _logger;
-        public AuditoriaIloggerFilter(ILogger logger)
+        private readonly IKLogger _logger;
+        public AuditoriaIloggerFilter(IKLogger logger)
         {
-            _logger = logger;
+            _logger=logger;
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
