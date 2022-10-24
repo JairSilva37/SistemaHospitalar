@@ -1,0 +1,534 @@
+<html xmlns:x="urn:schemas-microsoft-com:office:excel">
+	<head>
+		<style>
+			br {mso-data-placement:same-cell;}
+		</style>
+	</head><table>
+		<tr style="font-weight:bold;">
+			<td>Relatório Medidores Descobertos</td>
+		</tr><tr>
+			<th scope="col">Nome do CP</th><th scope="col">N&#250;mero de S&#233;rie da Etiqueta</th><th scope="col">Fase</th>
+		</tr><tr>
+			<td>CP0530 - CIDADE NOVA - CELPA</td><td>5006398</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP0563 - MARITUBA- CELPA</td><td>50004036</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0563 - MARITUBA- CELPA</td><td>50004073</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0563 - MARITUBA- CELPA</td><td>50004076</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0588 - MARAMBAIA - CELPA</td><td>5006359</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP0652 - GUAMA - CELPA</td><td>5004231</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP0717 - JURUNAS - CELPA</td><td>50000332</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>CP0725 - JURUNAS - CELPA</td><td>3690698</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0725 - JURUNAS - CELPA</td><td>3690699</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0725 - JURUNAS - CELPA</td><td>3690710</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0725 - JURUNAS - CELPA</td><td>3690720</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0725 - JURUNAS - CELPA</td><td>3690723</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0725 - JURUNAS - CELPA</td><td>3890952</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0725 - JURUNAS - CELPA</td><td>3890957</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0854 - IGARAPE MIRI - CELPA</td><td>50000284</td><td>&nbsp;</td>
+		</tr><tr>
+			<td>CP0875 - BREVES - CELPA</td><td>5005141</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP0933 - BARCARENA - CELPA</td><td>5006728</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP0936 - BARCARENA - CELPA</td><td>3771539</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0936 - BARCARENA - CELPA</td><td>3972242</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0942 - BARCARENA - CELPA</td><td>5006717</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP0942 - BARCARENA - CELPA</td><td>5006720</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>50004059</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>50004025</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>50003991</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>50003993</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3771486</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3771488</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3771492</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3771501</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3771506</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3972291</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3972293</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3972304</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974355</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974372</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974375</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974420</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974481</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974550</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974561</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974563</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974611</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974612</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974614</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974639</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974642</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3974646</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773662</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773759</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773794</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773821</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773826</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773827</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773828</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773854</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0946 - BARCARENA - CELPA</td><td>3773861</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP0962 - MOJU - CELPA</td><td>5006269</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP0964 - MOJU - CELPA</td><td>5006725</td><td>Trif&#225;sico</td>
+		</tr><tr>
+			<td>CP1022 - FATIMA - CELPA</td><td>50004052</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1022 - FATIMA - CELPA</td><td>50003967</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1022 - FATIMA - CELPA</td><td>50003969</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1022 - FATIMA - CELPA</td><td>50004000</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>50004019</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890939</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890482</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890486</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890487</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890493</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890796</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890813</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890821</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890830</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890840</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890842</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690148</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690149</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3706579</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890028</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890056</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3890066</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690114</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690126</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690503</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690515</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690549</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690562</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690567</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690571</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3689642</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3689647</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3689657</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3689658</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3689659</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3689660</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3689661</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3689696</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1127 - SACRAMENTA- CELPA</td><td>3690737</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690743</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690746</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690751</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3699720</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3701156</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3701443</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3701447</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3701469</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3701483</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3701505</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3701506</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3705693</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706207</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706210</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706217</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706227</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706265</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706287</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706288</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706306</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706309</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706319</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706338</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706341</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706342</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706344</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706347</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706348</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706350</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706352</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706354</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706361</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706383</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706384</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689809</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689835</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689853</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689899</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689900</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689907</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689918</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689923</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689928</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689930</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689932</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690647</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690651</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690672</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690676</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690677</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690681</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690684</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690697</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690142</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689890</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690705</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690707</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890171</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890201</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890208</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890211</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890216</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890235</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890238</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890247</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890261</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890286</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890294</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890301</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890454</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890473</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706626</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706632</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706634</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706685</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706963</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706965</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706984</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706985</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3706997</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3710569</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3710578</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3710579</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3710581</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3710880</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690150</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690716</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690717</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690727</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690734</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3690721</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890961</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890962</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890982</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890985</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890987</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3893369</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901408</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901879</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901886</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901890</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901922</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901925</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901926</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901927</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901929</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3901930</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3902256</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906723</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906724</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906752</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906754</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906760</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906773</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906775</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906782</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906791</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906811</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906817</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906819</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906838</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3906848</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907134</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907140</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907172</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907288</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907289</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907293</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907294</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907295</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907306</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907309</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907471</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907509</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907511</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907512</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907517</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907535</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3907545</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3911086</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3911095</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3911098</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3911099</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3911101</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3911102</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3911125</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3911391</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890896</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890935</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3889814</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3890025</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>3689632</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>50003970</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1134 - SACRAMENTA - CELPA</td><td>50004051</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1135 - SACRAMENTA - CELPA</td><td>3689893</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1135 - SACRAMENTA - CELPA</td><td>3689873</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1135 - SACRAMENTA - CELPA</td><td>3689875</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1135 - SACRAMENTA - CELPA</td><td>3689885</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1135 - SACRAMENTA - CELPA</td><td>3689889</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1152 - TELEGRAFO - CELPA</td><td>50003981</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1198 - TAILANDIA - CELPA</td><td>50003990</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1198 - TAILANDIA - CELPA</td><td>50004009</td><td>Monof&#225;sico</td>
+		</tr><tr>
+			<td>CP1204 - TAILANDIA - CELPA</td><td>5005856</td><td>Trif&#225;sico</td>
+		</tr><tr>
+
+		</tr>
+	</table>
