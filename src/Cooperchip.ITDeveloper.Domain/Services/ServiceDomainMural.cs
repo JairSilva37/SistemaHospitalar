@@ -3,6 +3,8 @@ using Cooperchip.ITDeveloper.Domain.Interfaces;
 using Cooperchip.ITDeveloper.Domain.Interfaces.Repository;
 using Cooperchip.ITDeveloper.Domain.Mensageria.Mediators;
 using Cooperchip.ITDeveloper.Domain.Mensageria.Notifications;
+using Cooperchip.ITDeveloper.Domain.Mensageria.Validations;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Cooperchip.ITDeveloper.Domain.Services
@@ -20,6 +22,15 @@ namespace Cooperchip.ITDeveloper.Domain.Services
 
         public async Task AdicionarMural(Mural model)
         {
+            if (!ExecutarValidacao(new MuralValidation(), model)) return;
+
+            if (_repositoryMural.Buscar(m => m.Id==model.Id).Result.Any())
+            {
+                Notificar("Já existe um registro já foi cadastrado!");
+                return;
+            }
+
+
             await _repositoryMural.Inserir(model);
             //await _bus.PulicarEvento(new MuralCadastradoEvent(model.Data, model.Titulo, model.Autor, model.Titulo));
 
@@ -27,6 +38,15 @@ namespace Cooperchip.ITDeveloper.Domain.Services
 
         public async Task AtualizarMural(Mural model)
         {
+
+            if (!ExecutarValidacao(new MuralValidation(), model)) return;
+
+            if (_repositoryMural.Buscar(m => m.Titulo.Trim() ==model.Titulo.Trim() && m.Autor==model.Autor &&
+                 m.Data ==model.Data && m.Aviso.Trim()==model.Aviso.Trim()).Result.Any())
+            {
+                Notificar("Não foram modificados !");
+                return;
+            }
             await _repositoryMural.Atualizar(model);
         }
 

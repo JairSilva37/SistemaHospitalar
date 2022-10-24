@@ -16,10 +16,11 @@ namespace Cooperchip.ITDeveloper.Data.Repository
         {
         }
 
-        public IQueryable<Mural> SelecionarTodosParaMural(string filtro = null)
+        public IQueryable<Mural> SelecionarTodosParaMural(string filtro)
         {
             var objBusca = from b in _context.Mural select b;
-            if (!String.IsNullOrEmpty(filtro)) objBusca.Where(x => x.Titulo==filtro);
+            if (!String.IsNullOrEmpty(filtro)) 
+                objBusca = objBusca.Where(x => x.Titulo==filtro);
             return objBusca;
         }
 
