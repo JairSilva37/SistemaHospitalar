@@ -3,14 +3,26 @@ using System;
 
 namespace Cooperchip.ITDeveloper.Domain.Entities
 {
-    public class Mural
+    public class Mural: EntityBase
     {
-        public int MuralId { get; set; }
-        public DateTime Data { get; set; }
-        public string Titulo { get; set; }
-        public string Aviso { get; set; }
-        public string Autor { get; set; }
-        public string Email { get; set; }
+        public Mural()
+        {
+        }
+        public Mural(DateTime data, string titulo, string autor, string email)
+        {
+            Data=data;
+            Titulo=titulo;
+            Autor=autor;
+            Email=email;
+            Aviso="";
+        }
+
+        public DateTime Data { get; private set; }
+        public string Titulo { get; private set; }
+        public string Autor { get; private set; }
+        public string Email { get; private set; }
+
+        public string Aviso { get; private set; }
 
         public override string ToString()
         {

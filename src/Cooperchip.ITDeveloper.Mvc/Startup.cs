@@ -4,10 +4,9 @@ using Cooperchip.ITDeveloper.Domain.Mensageria.Mediators;
 using Cooperchip.ITDeveloper.Mvc.Configuration;
 using Cooperchip.ITDeveloper.Mvc.Configurations;
 using Cooperchip.ITDeveloper.Mvc.Data;
-using Cooperchip.ITDeveloper.Mvc.Extensions.Filters;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity;
 using Cooperchip.ITDeveloper.Mvc.Extensions.Identity.Services;
-using KissLog;
+using Cooperchip.ITDeveloper.Mvc.ServiceApp.Settings;
 using KissLog.AspNetCore;
 using KissLog.CloudListeners.RequestLogsListener;
 using MediatR;
@@ -17,6 +16,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using System.Reflection;
 
 namespace Cooperchip.ITDeveloper.Mvc
@@ -56,6 +56,10 @@ namespace Cooperchip.ITDeveloper.Mvc
             services.AddScoped<INotificationHandler<PacienteCadastradoEvent>, PacienteCadastradoEventHandler>();
             #endregion
 
+            #region: smtpGmail
+            services.Configure<EmailCredentialsSettings>(Configuration.GetSection(EmailCredentialsSettings.SectionName));
+            services.AddSingleton(x => x.GetRequiredService<IOptions<EmailCredentialsSettings>>().Value);
+            #endregion
 
             #region KisLLoger
             services.AddLoggerConfig();
